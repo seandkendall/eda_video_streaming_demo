@@ -168,3 +168,28 @@ button:hover {
     font-weight: bold;
     color: #333;
 }
+.error-box {
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.error-box span {
+    color: #c62828;
+}
+
+.close-error {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: #c62828;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+    line-height: 1;
+}

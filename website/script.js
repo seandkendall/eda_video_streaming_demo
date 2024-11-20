@@ -4,7 +4,7 @@ let selectedPayment = "";
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('emailForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        showScreen2();
+        checkEmailAndProceed();
     });
 
     document.getElementById('passwordForm').addEventListener('submit', (e) => {
@@ -32,28 +32,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('giftCodeForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        redeemGiftCode();
+        checkGiftCodeAndProceed();
     });
+
+    document.getElementById('closeError').addEventListener('click', hideErrorBox);
 });
 
-function showScreen2() {
+function showErrorBox(message) {
+    const errorBox = document.getElementById('errorBox');
+    const errorMessage = document.getElementById('errorMessage');
+    errorMessage.textContent = message;
+    errorBox.classList.remove('hidden');
+}
+
+function hideErrorBox() {
+    document.getElementById('errorBox').classList.add('hidden');
+}
+
+function checkEmailAndProceed() {
     const email = document.getElementById('email').value;
-    if (email) {
-        document.getElementById('screen1').classList.add('hidden');
-        document.getElementById('screen2').classList.remove('hidden');
-        document.getElementById('emailDisplay').value = email;
+    if (email === 'seandall@amazon.com') {
+        showErrorBox('You already have an account with this email address.');
+    } else if (email) {
+        hideErrorBox();
+        showScreen2();
     } else {
-        alert('Please enter your email address.');
+        showErrorBox('Please enter your email address.');
     }
+}
+
+function showScreen2() {
+    document.getElementById('screen1').classList.add('hidden');
+    document.getElementById('screen2').classList.remove('hidden');
+    document.getElementById('emailDisplay').value = document.getElementById('email').value;
 }
 
 function showScreen3() {
     const password = document.getElementById('password').value;
     if (password) {
+        hideErrorBox();
         document.getElementById('screen2').classList.add('hidden');
         document.getElementById('screen3').classList.remove('hidden');
     } else {
-        alert('Please enter a password.');
+        showErrorBox('Please enter a password.');
     }
 }
 
@@ -68,10 +89,11 @@ function selectPlan(index) {
 
 function showScreen4() {
     if (selectedPlan) {
+        hideErrorBox();
         document.getElementById('screen3').classList.add('hidden');
         document.getElementById('screen4').classList.remove('hidden');
     } else {
-        alert('Please select a plan.');
+        showErrorBox('Please select a plan.');
     }
 }
 
@@ -80,13 +102,18 @@ function showGiftCodeScreen() {
     document.getElementById('giftCodeScreen').classList.remove('hidden');
 }
 
-function redeemGiftCode() {
+function checkGiftCodeAndProceed() {
     const giftCode = document.getElementById('giftCode').value;
-    if (giftCode) {
+    if (giftCode === 'CODE1') {
+        showErrorBox('Invalid Gift Code');
+    } else if (giftCode === 'CODE2') {
+        showErrorBox('One Time Gift Code already Used');
+    } else if (giftCode) {
+        hideErrorBox();
         selectedPayment = `Gift Code: ${giftCode}`;
         showScreen5();
     } else {
-        alert('Please enter a gift code.');
+        showErrorBox('Please enter a gift code.');
     }
 }
 

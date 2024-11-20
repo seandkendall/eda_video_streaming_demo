@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mock Video Streaming Company - Sign Up</title>
+    <title>re:invent Video Streaming - Sign Up</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <!-- Screen 1: Email Entry -->
         <div id="screen1">
-            <h1>Welcome to Mock Video Streaming Company</h1>
+            <h1>Welcome to re:invent Video Streaming</h1>
             <form id="emailForm">
                 <input type="email" id="email" placeholder="Enter your email address" required>
                 <button type="submit">Get Started</button>
@@ -100,7 +100,13 @@
             <p>Email: <span id="finalEmail"></span></p>
             <p>Selected Plan: <span id="finalPlan"></span></p>
             <p>Payment Method: <span id="finalPayment"></span></p>
-            <p>We hope you enjoy your streaming experience with Mock Video Streaming Company!</p>
+            <p>We hope you enjoy your streaming experience with re:invent Video Streaming!</p>
+        </div>
+
+        <!-- Error Box -->
+        <div id="errorBox" class="error-box hidden">
+            <span id="errorMessage"></span>
+            <button id="closeError" class="close-error">&times;</button>
         </div>
     </div>
     <script src="script.js"></script>
