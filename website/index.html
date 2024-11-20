@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Video Streaming Company - Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Screen 1: Email Entry -->
+        <div id="screen1">
+            <h1>Welcome to Mock Video Streaming Company</h1>
+            <form id="emailForm">
+                <input type="email" id="email" placeholder="Enter your email address" required>
+                <button type="submit">Get Started</button>
+            </form>
+        </div>
+
+        <!-- Screen 2: Password Entry -->
+        <div id="screen2" class="hidden">
+            <h1>Finish Setting up your account</h1>
+            <form id="passwordForm">
+                <input type="email" id="emailDisplay" readonly>
+                <input type="password" id="password" placeholder="Add a password" required>
+                <label class="checkbox-container">Please do not email me special offers
+                    <input type="checkbox" id="optOut">
+                    <span class="checkmark"></span>
+                </label>
+                <button type="submit">Next</button>
+            </form>
+        </div>
+
+        <!-- Screen 3: Plan Selection -->
+        <div id="screen3" class="hidden">
+            <h1>Choose the plan that's right for you</h1>
+            <div class="plan-container">
+                <div class="plan" data-index="0">
+                    <h3>Standard with ads (1080p)</h3>
+                    <p><strong>Monthly price:</strong> <span>$5.99</span></p>
+                    <p><strong>Video and sound quality:</strong> <span>Good</span></p>
+                    <p><strong>Resolution:</strong> <span>1080p (Full HD)</span></p>
+                    <p><strong>Supported devices:</strong> <span>TV, computer, mobile phone, tablet</span></p>
+                    <p><strong>Devices your household can watch at the same time:</strong> <span>2</span></p>
+                    <p><strong>Download devices:</strong> <span>2</span></p>
+                    <p><strong>Ads:</strong> <span>Less than you might think</span></p>
+                </div>
+                <div class="plan" data-index="1">
+                    <h3>Standard (1080p)</h3>
+                    <p><strong>Monthly price:</strong> <span>$16.49</span></p>
+                    <p><strong>Video and sound quality:</strong> <span>Good</span></p>
+                    <p><strong>Resolution:</strong> <span>1080p (Full HD)</span></p>
+                    <p><strong>Supported devices:</strong> <span>TV, computer, mobile phone, tablet</span></p>
+                    <p><strong>Devices your household can watch at the same time:</strong> <span>2</span></p>
+                    <p><strong>Download devices:</strong> <span>2</span></p>
+                    <p><strong>Ads:</strong> <span>No ads</span></p>
+                </div>
+                <div class="plan" data-index="2">
+                    <h3>Premium (4K + HDR)</h3>
+                    <p><strong>Monthly price:</strong> <span>$20.99</span></p>
+                    <p><strong>Video and sound quality:</strong> <span>Best</span></p>
+                    <p><strong>Resolution:</strong> <span>4K (Ultra HD) + HDR</span></p>
+                    <p><strong>Spatial audio (immersive sound):</strong> <span>Included</span></p>
+                    <p><strong>Supported devices:</strong> <span>TV, computer, mobile phone, tablet</span></p>
+                    <p><strong>Devices your household can watch at the same time:</strong> <span>4</span></p>
+                    <p><strong>Download devices:</strong> <span>6</span></p>
+                    <p><strong>Ads:</strong> <span>No ads</span></p>
+                </div>
+            </div>
+            <button id="planNextButton">Next</button>
+        </div>
+
+        <!-- Screen 4: Payment Selection -->
+        <div id="screen4" class="hidden">
+            <h1>Choose how to pay</h1>
+            <p>Your payment is encrypted and you can change how you pay anytime.</p>
+            <p>Secure for peace of mind.</p>
+            <p>Cancel easily online.</p>
+            <div class="payment-option" data-payment="Credit or Debit Card">Credit or Debit Card</div>
+            <div class="payment-option" data-payment="Add to mobile Bill">Add to mobile Bill</div>
+            <div class="payment-option" data-payment="Paypal">Paypal</div>
+            <div class="payment-option" data-payment="Gift Code">Gift Code</div>
+        </div>
+
+        <!-- New Screen: Gift Code Entry -->
+        <div id="giftCodeScreen" class="hidden">
+            <h1>Enter Gift Code</h1>
+            <form id="giftCodeForm">
+                <div class="gift-code-container">
+                    <input type="text" id="giftCode" placeholder="Gift Card PIN or Code" required>
+                    <button type="submit">Redeem Gift Code</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Screen 5: Thank You -->
+        <div id="screen5" class="hidden">
+            <h1>Thank You for Joining!</h1>
+            <p>Your account has been successfully created.</p>
+            <p>Email: <span id="finalEmail"></span></p>
+            <p>Selected Plan: <span id="finalPlan"></span></p>
+            <p>Payment Method: <span id="finalPayment"></span></p>
+            <p>We hope you enjoy your streaming experience with Mock Video Streaming Company!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

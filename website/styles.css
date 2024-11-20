@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+input[type="email"], input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #f40612;
+}
+.plan-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.plan {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    width: 30%;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 10px;
+    position: relative;
+}
+.plan:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.plan.selected {
+    border: 2px solid #000;
+}
+.plan.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #e50914;
+}
+.plan h3 {
+    background: linear-gradient(to right, #e50914, #f40612);
+    color: white;
+    padding: 10px;
+    margin: -20px -20px 20px -20px;
+    border-radius: 4px 4px 0 0;
+}
+.plan p {
+    margin: 10px 0;
+}
+.plan p strong {
+    color: #333;
+}
+.plan p span {
+    color: #666;
+}
+.payment-option {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.payment-option:hover {
+    background-color: #f9f9f9;
+}
+.hidden {
+    display: none;
+}
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #e50914;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+.gift-code-container {
+    text-align: center;
+}
+.gift-code-container input {
+    margin-bottom: 20px;
+}
+#screen5 {
+    text-align: center;
+}
+#screen5 h1 {
+    color: #e50914;
+}
+#screen5 p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+#screen5 span {
+    font-weight: bold;
+    color: #333;
+}
